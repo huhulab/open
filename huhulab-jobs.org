@@ -45,7 +45,11 @@
 
 ** 我们想找的
 
+*目前开放职位* ：
+- Android 开发工程师
+
 基础要求：
+
 - 熟练使用 *nix 平台
 - 熟练使用 git ，认同 Code Review/Unit Test/Continuous Integration 的理念
 - 至少熟悉 Ruby/Python/Clojure/JavaScript(NodeJS) 里面的一种
@@ -53,6 +57,7 @@
 - 良好的英语基础，无障碍的阅读各种英文资料， Google/科学上网重度患者
 
 加分项：
+
 - 有个人技术博客的加分
 - 有个人技术博客并排版精美内容原创精彩无限的，加好多分，可享受登门拜访三顾茅庐的特别服务
 - 熟悉 github/bitbucket ，有自己的开源项目或曾经为开源项目贡献过 patch 的，同上
@@ -60,18 +65,20 @@
 - 架构大牛，有高并发系统开发经验的，同上
 
 
-*** Android 开发工程师
+*** Android 开发工程师[open]
+
 - 至少完整经历过一个Android应用产品的开发
 - 熟悉Android系统以及SDK，具备完备基础知识
 - 精通Java，熟悉多线程编程和网络编程
 - 具有很强的面向对象的开发以及设计能力
 
 加分项：
+
 - 熟悉 Android NDK
 - 有自己应用上线的
 - 熟悉 HTML5 开发的
 
-*** Web 开发工程师
+*** Web 开发工程师[closed]
 
 前端方面：
 - 需要掌握基本的 HTML5/CSS 的基本知识
