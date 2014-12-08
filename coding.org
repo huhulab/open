@@ -1,0 +1,62 @@
+* huhulab 开发规范（试行）
+
+** git
+
+- 团队所有代码采用 git 进行版本控制
+- 开发模型： http://scottchacon.com/2011/08/31/github-flow.html
+  - =master= 分支的代码要求做到可以直接进行上线部署
+  - 开发新分支时，基于 =master= 分支新建一个 =feature-xxxx= 的分支
+  - 修复 bug 时，基于 =master= 分支新建一个 =bugfix-xxxx= 的分支
+  - 项目发布后基于 master 分支建立一个发布分支 =release-xxxx= ， 同时在 master 分支上打上合适的 tag =v0.xx=
+  - 发布分支不做 feature ，只做 bugfix ，必要时做一些维护工作
+- git commit 规范
+  - 保证一个 commit 只做一件事情，比如一个 feature/bugfix
+  - 大型 feature 分解成多个子 feature 做多个 commit ，尽量控制每个 commit 的粒度不要太大。比如有的比较复杂的 feature 可能先会需要对已有的 code 进行重构再开发，那就将重构和开发的代码分 2 个 commit 提交
+  - 严禁将一件事分成多个 commit 进行提交。提交之前在本地进行 =git rebase=
+  - 每个 commit 需要撰写详尽的 commit message 。commit message 格式为：
+    - summary: 简述 commit 的作用，控制在一行以内，可以关联相应的 github issues
+    - body: 详细描述 commit 的设计，代码，修复的 bug 来源等
+    - reference(optional): 给出一些参考链接， blog, stackoverflow 等
+
+- git config
+
+请在本机配置好 git 相关选项：
+
+#+BEGIN_SRC sh
+git config user.name "Your Name"
+git config user.email "youremail@example.com"
+git config branch.master.mergeoptions "--no-ff"
+#+END_SRC
+
+** coding
+
+- 超过 *1000* 行的团队协作项目需要遵循以下开发流程
+
+***  code review:
+   - 主项目关闭 =master= 分支的直接 PUSH 权限
+   - 团队成员通过 fork + pull request 的方式向 github 提交代码
+   - 每个 commit 要经过至少 2 人的 review
+     - 视团队项目规模，如果项目协作只有 2 人，代码互相 review ，3 人以上项目指定 1 人赋予 merge 权限， commit 要 2 人 review
+
+*** continous integration
+   - *1000* 行以上的项目需要加入完整的 unit test ，每次新的 commit 保证不破坏已有的 unit test
+
+*** style
+   - 采用合适的工具对代码进行 coding style 检查和静态分析，和 CI 系统集成
+   - 代码内部和 git commit message *禁止使用中文注释*
+   - 所有代码文件采用 UTF-8 编码
+   - 项目文档尽量采用英文，以便有利于平滑将代码开源
+   - github issues 讨论不限语言，方便即可
+
+*** documentation
+   - 每个项目有基本的 README 文档，详细说明项目如何安装，部署，依赖关系
+   - 开源项目加入 license 说明
+
+*** deployment
+   - 复杂项目开发采用 vagrant 工具打包成虚拟镜像，上传到公司内部服务器上，尽量简化开发环境部署成本
+
+** reference
+- Commit message 格式部分参考了 https://wiki.openstack.org/wiki/GitCommitMessages
+- 知乎工作开发环境： http://www.zhihu.com/question/19638115
+- github boxen: https://boxen.github.com/
+- vagrant: https://www.vagrantup.com/
