@@ -1,0 +1,6 @@
+* HuhuLab 开放资源
+
+这里是 HuhuLab 的一些开放资源
+
+- [[https://github.com/huhulab/open/blob/master/coding.org][开发规范]]
+- [[https://github.com/huhulab/open/blob/master/hiring.org][人才理念]]
